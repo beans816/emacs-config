@@ -23,7 +23,7 @@ m-x customize-themes
 > 
 > make sure pip is installed (sudo pacman -Syu python-pip)
 > 
-> make sure ipython is installed (pip3 install ipython) 
+> make sure ipython is installed using sudo (sudo pip3 install ipython) (https://stackoverflow.com/questions/63983934/ipython-installed-but-not-found helped me fix 'python shell interpreter ipython cannot be found' when I already had it installed)
 
 m-x package-install RET python-mode
 
