@@ -20,8 +20,12 @@ m-x customize-themes
 # python code editor
 
 > make sure python is installed
+> 
 > make sure pip is installed (sudo pacman -Syu python-pip)
+> 
 > make sure ipython is installed (pip3 install ipython) 
+
+m-x package-install RET python-mode
 
 m-x package-install RET company
 
