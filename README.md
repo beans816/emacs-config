@@ -45,4 +45,7 @@ m-x package-install RET company-c-headers
 
 > copy code under c/c++ comment
 
+# other
+
+m-x package-install RET swiper
 
