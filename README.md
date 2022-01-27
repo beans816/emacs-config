@@ -16,3 +16,19 @@ copy paste below:
 
 m-x customize-themes
 (pick your preffered default-theme)
+
+python code editor
+
+m-x package-install RET company
+m-x package-install RET company-tryhard
+m-x package-install RET elpy
+m-x package-install RET ipython
+
+c/c++ code editor
+
+m-x package-install RET eglot
+m-x package-install RET company-c-headers
+
+
+
+
