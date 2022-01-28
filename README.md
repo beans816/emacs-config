@@ -48,4 +48,6 @@ m-x package-install RET company-c-headers
 # other
 
 m-x package-install RET swiper
-
+m-x package-install RET package+
+m-x package-install RET package-filter
+m-x package-install RET vertigo
