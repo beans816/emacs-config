@@ -1,11 +1,16 @@
+;; use-package install and adding melpa archives
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(setq use-package-always-ensure t)
 (require 'package)
  
 (add-to-list 'package-archives
 '("melpa" . "http://melpa.org/packages/") t)
- 
+ (package-initialize)
 (package-refresh-contents)
 
-(package-install 'use-package)
+;; favourite theme
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -26,7 +31,9 @@
  '(company-tooltip-scrollbar-track ((t (:background "#199919991999"))))
  '(company-tooltip-selection ((t (:inherit font-lock-function-name-face)))))
 
+;; company
 (use-package company
+  :ensure t
   :bind (:map company-active-map
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous))
@@ -49,6 +56,9 @@
      `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
      `(company-tooltip-common ((t (:inherit font-lock-constant-face))))
      `(company-preview-common ((t (:foreground ,ac :background ,(color-lighten-name bg 10))))))))
+;;company-math
+(use-package company-math
+  :ensure t)
 
 ;; REALLY NICE PLUGINS
 
@@ -70,11 +80,23 @@
   :custom (vertico-cycle t)
   :init (vertico-mode))
 
-
+;; Parentheses - make sure you are not missing a ) !
+(use-package highlight-parentheses
+  :ensure t
+  :config
+  (progn
+    (highlight-parentheses-mode)
+    (global-highlight-parentheses-mode))
+  )
 
 
 
 ;; CODING ENVIRONMENTS
+;; emacs speacs statistics
+;;ess
+(use-package ess
+  :ensure t
+  :init(require 'ess-site))
 
 
 ;; python - mode
